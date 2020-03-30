@@ -2,7 +2,7 @@ import streamlit as st
 
 st.image('cover123.png', width=700)
 
-st.header("Team Mayo project")
+st.markdown("#### Choose a Lookup:")
 #st.subheader("project demo")
 
 
@@ -60,7 +60,7 @@ def classes_df():
         classes_df = pd.read_sql_query(query,engine)
         
         return classes_df
-dataviz_choice = st.selectbox("Choose a Lookup",
+dataviz_choice = st.selectbox(" ",
                                           ['Course Lookup' ,"Instructor Classes Lookup",
                                            "Do my Own SQL Query"])
 
