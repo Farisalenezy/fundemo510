@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('https://cdn1.iconfinder.com/data/icons/grocery-3/128/mayonnaise-512.png', width=200)
+st.image('cover.png', width=700)
 
 st.header("Team Mayo project")
 #st.subheader("project demo")
@@ -13,7 +13,7 @@ st.header("Team Mayo project")
 
 import pandas as pd
 from sqlalchemy import create_engine
-from io import BytesIO, StringIO
+
 #engine = create_engine("sqlite:///TestDB.db")
 
 @st.cache(allow_output_mutation=True)

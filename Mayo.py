@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('https://cdn1.iconfinder.com/data/icons/grocery-3/128/mayonnaise-512.png', width=200)
+st.image('cover.png', width=700)
 
 st.header("Team Mayo project")
 #st.subheader("project demo")
