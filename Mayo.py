@@ -60,8 +60,12 @@ def classes_df():
         classes_df = pd.read_sql_query(query,engine)
         
         return classes_df
+    
+query = 'SELECT name from sqlite_master where type= "table"'
+tables = pd.read_sql_query(query,engine)
+tables = tables.rename(columns={"name": "DatabaseTables"})
 dataviz_choice = st.selectbox(" ",
-                                          ['Course Lookup' ,"Instructor Classes Lookup",
+                                          ['Course Lookup' ,"Instructor Classes Lookup", "Database Tables Information" ,
                                            "Do my Own SQL Query"])
 
 
@@ -71,7 +75,25 @@ dataviz_choice = st.selectbox(" ",
 
 #instructor_lname_unique_m = st.text_input("Enter the instructor's last name").capitalize()
 #    instructor_last_list = df_main.query('instructor_lname.str.contains("{}")'.format(instructor_lname_unique_m), engine='python')
+if dataviz_choice =='Database Tables Information':
+    
+    t_info = tables.copy()
+    st.header("Database Tables Overview :")
+    st.table(t_info)
+    if st.checkbox("Click Here to See The ERD"):
+        st.image("Mayo.png" , use_column_width=True ,format =  'PNG' )# ,width = 900)
+    st.header("Database Tables Information :")
+    for i in tables.DatabaseTables.values : 
+    
+        query = "PRAGMA TABLE_INFO ({}) ".format (i)
 
+        table_info = pd.read_sql_query(query,engine)
+        table_info =table_info.rename(columns={"name": "ColumnName" ,"type": "DataType" , 'dflt_value':'default_value',"pk": 'primary_key'})
+        table_info.primary_key = table_info.primary_key.map({1:"Yes" , 0: ""})
+        
+        st.write("** Table : **", i)
+        st.write(table_info)
+        st.markdown("---")
 
 if dataviz_choice =='Instructor Classes Lookup' :
     df_main = main_df()
