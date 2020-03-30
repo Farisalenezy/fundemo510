@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image('cover.png', width=700)
+st.image('cover123.png', width=700)
 
 st.header("Team Mayo project")
 #st.subheader("project demo")
