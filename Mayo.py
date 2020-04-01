@@ -165,9 +165,10 @@ if dataviz_choice =='Instructor Classes Lookup' :
             
             Semester =  multiselect("Select the semester you wish to see:", options=sem, default= sem)
             if Semester:
+                
             
-
-                new_df =df[df['SEMESTER'].isin(Semester)].reset_index()
+    
+                new_df =year_df[year_df['SEMESTER'].isin(Semester)].reset_index()
                 new_df.pop("index")
                 st.success("**Showing {} records:**".format(new_df.shape[0]))
                 st.write(new_df)
