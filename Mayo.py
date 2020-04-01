@@ -1,4 +1,19 @@
 import streamlit as st
+import markdown
+
+st.markdown(
+        f"""
+<style>
+    .reportview-container .main .block-container{{
+        max-width: 750px;
+    }}
+</style>
+""",
+        unsafe_allow_html=True,
+    )
+
+md = markdown.Markdown()
+
 
 st.image('cover123.png', width=700)
 
@@ -60,10 +75,13 @@ def classes_df():
         classes_df = pd.read_sql_query(query,engine)
         
         return classes_df
+def tables_info():
     
-query = 'SELECT name from sqlite_master where type= "table"'
-tables = pd.read_sql_query(query,engine)
-tables = tables.rename(columns={"name": "DatabaseTables"})
+    query = 'SELECT name from sqlite_master where type= "table"'
+    tables = pd.read_sql_query(query,engine)
+    tables = tables.rename(columns={"name": "DatabaseTables"})
+    return tables
+
 dataviz_choice = st.selectbox(" ",
                                           ['Course Lookup' ,"Instructor Classes Lookup", "Database Tables Information" ,
                                            "Do my Own SQL Query"])
@@ -76,10 +94,11 @@ dataviz_choice = st.selectbox(" ",
 #instructor_lname_unique_m = st.text_input("Enter the instructor's last name").capitalize()
 #    instructor_last_list = df_main.query('instructor_lname.str.contains("{}")'.format(instructor_lname_unique_m), engine='python')
 if dataviz_choice =='Database Tables Information':
-    
+    tables =tables_info()
     t_info = tables.copy()
     st.header("Database Tables Overview :")
     st.table(t_info)
+     
     if st.checkbox("Click Here to See The ERD"):
         st.image("Mayo.png" , use_column_width=True ,format =  'PNG' )# ,width = 900)
     st.header("Database Tables Information :")
@@ -204,8 +223,15 @@ elif  dataviz_choice == 'Do my Own SQL Query' :
         except:
             st.write("you entered a wrong Query")
             st.button("Re Run")
+    
 
-                
+st.sidebar.markdown(f'''<div class="card" style="width: 15rem;">
+  <div class="card-body">
+    <h4 class="card-title">Made by:</h4>
+    <p class="card-text">Faris Alenezy </p>
+    <a href="https://github.com/Farisalenezy/fundemo510" class="card-link">App Repository Link</a>
+  </div>
+</div>''', unsafe_allow_html=True)  
     
         
         
