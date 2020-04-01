@@ -226,6 +226,18 @@ elif  dataviz_choice == 'Do my Own SQL Query' :
     if st.checkbox("Click Here to See The ERD"):
         st.image("Mayo.png" , use_column_width=True ,format =  'PNG' )# ,width = 900)
     query = st.text_area("Run a SQL Query")
+    tables =tables_info()
+    t_info = tables.copy()
+   
+   
+    if  st.button("Run it") :
+        try:
+                        
+            tables = pd.read_sql_query(query,engine)
+            st.write(tables)
+        except:
+            st.write("you entered a wrong Query")
+            st.button("Re Run")
     st.markdown(f'''<div class="list-group">
   <button type="button" class="list-group-item list-group-item-action active"> Database Tables</button>
   <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[0])}</button>
@@ -236,16 +248,6 @@ elif  dataviz_choice == 'Do my Own SQL Query' :
    <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[5])}</button>
    <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[6])}</button>
 </div>''', unsafe_allow_html=True)
-   
-    if  st.button("Run it") :
-        try:
-                        
-            tables = pd.read_sql_query(query,engine)
-            st.write(tables)
-        except:
-            st.write("you entered a wrong Query")
-            st.button("Re Run")
-    
 
 st.sidebar.markdown(f'''</div>
 <div class="card bg-light mb-3" style="max-width: 18rem;">
