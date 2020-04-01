@@ -97,7 +97,17 @@ if dataviz_choice =='Database Tables Information':
     tables =tables_info()
     t_info = tables.copy()
     st.header("Database Tables Overview :")
-    st.table(t_info)
+    st.markdown(f'''<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-action active"> Database Tables</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[0])}</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[1])}</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[2])}</button>
+  <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[3])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[4])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[5])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[6])}</button>
+</div>''', unsafe_allow_html=True)
+    #st.table(t_info)
      
     if st.checkbox("Click Here to See The ERD"):
         st.image("Mayo.png" , use_column_width=True ,format =  'PNG' )# ,width = 900)
@@ -225,17 +235,26 @@ elif  dataviz_choice == 'Do my Own SQL Query' :
             st.button("Re Run")
     
 
-st.sidebar.markdown(f'''<div class="card" style="width: 15rem;">
+st.sidebar.markdown(f'''</div>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">About</div>
   <div class="card-body">
-    <h4 class="card-title">Made by:</h4>
-    <p class="card-text">Faris Alenezy </p>
-    <a href="https://github.com/Farisalenezy/fundemo510" class="card-link">App Repository Link</a>
+    <p class="card-text">This App was built to show how SQLite and pandas work together to produce fast lookups and customized outputs.</p>
+<a href="https://github.com/Farisalenezy/fundemo510" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">App Repository Link</a>
   </div>
 </div>''', unsafe_allow_html=True)  
-    
-        
-        
-        
+
+
+st.sidebar.markdown(f'''<div class="card bg-light mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Made by:</h5>
+    <p class="card-text">Faris Alenezy</p>
+  </div>
+</div>''', unsafe_allow_html=True)
+
+#if button:
+ 
+
         
         
 
