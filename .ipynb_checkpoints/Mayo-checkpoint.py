@@ -223,7 +223,19 @@ if dataviz_choice =='Course Lookup' :
 
             
 elif  dataviz_choice == 'Do my Own SQL Query' :
+    if st.checkbox("Click Here to See The ERD"):
+        st.image("Mayo.png" , use_column_width=True ,format =  'PNG' )# ,width = 900)
     query = st.text_area("Run a SQL Query")
+    st.markdown(f'''<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-action active"> Database Tables</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[0])}</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[1])}</button>
+  <button type="button" class="list-group-item list-group-item-action">{str(t_info.DatabaseTables[2])}</button>
+  <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[3])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[4])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[5])}</button>
+   <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[6])}</button>
+</div>''', unsafe_allow_html=True)
    
     if  st.button("Run it") :
         try:
