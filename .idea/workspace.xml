@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faced274-6eda-4f14-97a1-a37dedb17580" name="Default Changelist" comment="" />
+    <list default="true" id="faced274-6eda-4f14-97a1-a37dedb17580" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZeiVVnJkqe78lz7deAk2OhD031" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -52,10 +58,10 @@
       <screen x="0" y="0" width="1289" height="819" />
     </state>
     <state x="154" y="53" key="SettingsEditor/0.0.1289.819@0.0.1289.819" timestamp="1585206476037" />
-    <state x="341" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1585270259156">
+    <state x="341" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1587510100814">
       <screen x="0" y="0" width="1289" height="819" />
     </state>
-    <state x="341" y="234" key="com.intellij.ide.util.TipDialog/0.0.1289.819@0.0.1289.819" timestamp="1585270259156" />
+    <state x="341" y="234" key="com.intellij.ide.util.TipDialog/0.0.1289.819@0.0.1289.819" timestamp="1587510100813" />
     <state x="400" y="25" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585208442869">
       <screen x="0" y="0" width="1289" height="819" />
     </state>

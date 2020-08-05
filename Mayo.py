@@ -16,7 +16,14 @@ md = markdown.Markdown()
 
 
 st.image('cover123.png', width=700)
-
+st.sidebar.markdown(f'''</div>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">info</div>
+  <div class="card-body">
+    <p class="card-text">Read more about how was the database was built by clicking the report button below</p>
+<a href="https://github.com/fairfield-ba510-spring2020/term-project-mayo" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The Report Github Link</a>
+  </div>
+</div>''', unsafe_allow_html=True) 
 st.markdown("#### Choose a Lookup:")
 #st.subheader("project demo")
 
@@ -255,9 +262,10 @@ st.sidebar.markdown(f'''</div>
   <div class="card-header">About</div>
   <div class="card-body">
     <p class="card-text">This App was built to show how SQLite and pandas work together to produce fast lookups and customized outputs.</p>
-<a href="https://github.com/Farisalenezy/fundemo510" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">App Repository Link</a>
+<a href="https://github.com/Farisalenezy/fundemo510" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The App Repository Link</a>
   </div>
-</div>''', unsafe_allow_html=True)  
+</div>''', unsafe_allow_html=True) 
+
 
 
 st.sidebar.markdown(f'''<div class="card bg-light mb-3" style="width: 18rem;">
