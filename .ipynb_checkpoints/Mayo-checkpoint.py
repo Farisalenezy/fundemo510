@@ -13,17 +13,33 @@ st.markdown(
     )
 
 md = markdown.Markdown()
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+        #page-content {
+  flex: 0 0 auto;
+}
 
+#sticky-footer {
+  flex-shrink: none;
+}
 
-st.image('cover123.png', width=700)
-st.sidebar.markdown(f'''</div>
-<div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header">info</div>
-  <div class="card-body">
-    <p class="card-text">Read more about how was the database was built by clicking the report button below</p>
-<a href="https://github.com/fairfield-ba510-spring2020/term-project-mayo" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The Report Github Link</a>
-  </div>
-</div>''', unsafe_allow_html=True) 
+/* Other Classes for Page Styling */
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #e66465, #9198e5);
+}
+            
+   </style>          """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
+#st.image('cover123.png', width=700)
+
+rep_img = '''<img src="https://i.imgur.com/NuKYeTy.png" class="img-fluid" alt="Responsive image">'''
+st.markdown(rep_img, unsafe_allow_html=True)
+
 st.markdown("#### Choose a Lookup:")
 #st.subheader("project demo")
 
@@ -257,27 +273,54 @@ elif  dataviz_choice == 'Do my Own SQL Query' :
    <button type="button" class="list-group-item list-group-item-action"> {str(t_info.DatabaseTables[6])}</button>
 </div>''', unsafe_allow_html=True)
 
-st.sidebar.markdown(f'''</div>
+md2= f'''</div>
 <div class="card bg-light mb-3" style="max-width: 18rem;">
   <div class="card-header">About</div>
   <div class="card-body">
     <p class="card-text">This App was built to show how SQLite and pandas work together to produce fast lookups and customized outputs.</p>
 <a href="https://github.com/Farisalenezy/fundemo510" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The App Repository Link</a>
   </div>
-</div>''', unsafe_allow_html=True) 
+</div>'''
 
-
-
-st.sidebar.markdown(f'''<div class="card bg-light mb-3" style="width: 18rem;">
+md3= f'''<div class="card bg-light mb-3" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Made by:</h5>
     <p class="card-text">Faris Alenezy</p>
+     <p class="card-text"><a href="https://alenezy.com/">Website</a></p>
   </div>
-</div>''', unsafe_allow_html=True)
+</div>'''
+t0= f'''</div>
+<div class="card bg-light mb-3" style="max-width: 45rem;">
+  <div class="card-header">info</div>
+  <div class="card-body">
+    <p class="card-text">Read more about how was the database was built by clicking the report button below</p>
+<a href="https://github.com/fairfield-ba510-spring2020/term-project-mayo" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The Report Github Link</a>
+  </div>
+</div>'''
+t1= st.sidebar.markdown(md3, unsafe_allow_html=True)
+t2= st.sidebar.markdown(md2, unsafe_allow_html=True)
+
 
 #if button:
+footer= f'''<body class="d-flex flex-column">
+  <div id="page-content">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <h1 class="font-weight-light mt-4 text-white">Read more about how  the database was built by clicking the report button below   &nbsp; &nbsp; <a href="https://github.com/fairfield-ba510-spring2020/term-project-mayo" class="btn btn-primary btn-sm active" role="button" aria-pressed="false">The Report Github Link</a></h1>
+          
+
+
+      
+   
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
+</body>'''
  
 
-        
-        
+st.markdown(footer, unsafe_allow_html=True)
+
 
