@@ -1,6 +1,10 @@
 import streamlit as st
 import markdown
 
+st.beta_set_page_config(
+ page_title="Mayo SQL Project",
+page_icon="ms-icon-310x310.png",
+initial_sidebar_state="expanded",)
 st.markdown(
         f"""
 <style>
